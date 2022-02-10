@@ -1,0 +1,32 @@
+{
+  "notes": [
+    {
+      "author": 1,
+      "date": "Sun Jan 30 2022",
+      "title": "cyber-trace web dev",
+      "content": "this is a web dev bootcamp",
+      "id": "KsKyXGv"
+    },
+    {
+      "author": 1,
+      "date": "Sun Jan 30 2022",
+      "title": "cyber-trace web dev",
+      "content": "this is a web dev bootcamp",
+      "id": "5PI9t4O"
+    },
+    {
+      "author": 1,
+      "date": "Sun Jan 30 2022",
+      "title": "consectetur adipiscing elit",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat duis ultricies lacus sed turpis tincidunt id aliquet. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Mattis molestie a iaculis at erat pellentesque adipiscing. Turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet.",
+      "id": "h44gEMx"
+    },
+    {
+      "author": 1,
+      "date": "Thu Feb 10 2022",
+      "title": "this is a new note 2.0",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n",
+      "id": "rnCsllT"
+    }
+  ]
+}
