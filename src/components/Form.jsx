@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Form({ action }) {
-  const [title, settitle] = useState("");
-  const [content, setcontent] = useState("");
+  const [note, setNote] = useState({
+    author: 1,
+    title: "",
+    content: "",
+  });
   const [successMsg, setsuccessMsg] = useState(null);
   const [errorMsg, seterrorMsg] = useState(null);
   const handleSubmit = async (e) => {
     try {
       const newNote = {
-        author: 1,
+        ...note,
         date: new Date(Date.now()).toDateString(),
-        title: title,
-        content: content,
       };
       e.preventDefault();
+
       await fetch(`http://localhost:5000/notes`, {
         method: "POST",
         body: JSON.stringify(newNote),
@@ -21,13 +23,15 @@ export default function Form({ action }) {
           "Content-Type": "application/json",
         },
       });
-      settitle("");
-      setcontent("");
+      setNote({
+        title: "",
+        content: "",
+      });
       action((value) => [
         ...value,
         { ...newNote, id: Math.floor(Math.random() * 1000) },
       ]);
-      setsuccessMsg("Note created successfully");
+      setsuccessMsg(`Note created successfully`);
       setTimeout(() => setsuccessMsg(null), 3000);
     } catch {
       seterrorMsg("Error while creating note");
@@ -60,20 +64,20 @@ export default function Form({ action }) {
         <div>
           <label>Title</label>
           <input
-            value={title}
+            value={note.title}
             type="text"
             placeholder="Title"
-            onChange={(e) => settitle(e.target.value)}
+            onChange={(e) => setNote({ ...note, title: e.target.value })}
           />
         </div>
         <div>
           <label>Description</label>
           <textarea
-            value={content}
+            value={note.content}
             placeholder="Description"
             cols="30"
             rows="10"
-            onChange={(e) => setcontent(e.target.value)}
+            onChange={(e) => setNote({ ...note, content: e.target.value })}
           />
         </div>
         <button type="submit">Add new note</button>
