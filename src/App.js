@@ -7,14 +7,6 @@ import { getNotes } from "./API/notesAPI";
 function App() {
   const [notes, setnotes] = useState([]);
 
-  const fetchData = async () => {
-    const data = await getNotes();
-    if (data.error) console.log(data.error);
-    else setnotes(data);
-  };
-
-  useEffect(fetchData, []);
-
   return (
     <div className="dark App">
       <Navbar />

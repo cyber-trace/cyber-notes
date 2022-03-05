@@ -10,27 +10,11 @@ export default function Form({ action }) {
   const [errorMsg, seterrorMsg] = useState(null);
   const handleSubmit = async (e) => {
     try {
-      const newNote = {
-        ...note,
-        date: new Date(Date.now()).toDateString(),
-      };
       e.preventDefault();
-
-      await fetch(`http://localhost:5000/notes`, {
-        method: "POST",
-        body: JSON.stringify(newNote),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
       setNote({
         title: "",
         content: "",
       });
-      action((value) => [
-        ...value,
-        { ...newNote, id: Math.floor(Math.random() * 1000) },
-      ]);
       setsuccessMsg(`Note created successfully`);
       setTimeout(() => setsuccessMsg(null), 3000);
     } catch {
